@@ -124,20 +124,20 @@ for-all:
 add-tag:
 	@[ "${TAG}" ] || ( echo ">> env var TAG is not set"; exit 1 )
 	@echo "Adding tag ${TAG}"
-	@git tag -a ${TAG} -s -m "Version ${TAG}"
+	@git tag -a ${TAG} -m "Version ${TAG}"
 	@set -e; for dir in $(NONROOT_MODS); do \
 	  (echo Adding tag "$${dir:2}/$${TAG}" && \
-	 	git tag -a "$${dir:2}/$${TAG}" -s -m "Version ${dir:2}/${TAG}" ); \
+	 	git tag -a "$${dir:2}/$${TAG}" -m "Version ${dir:2}/${TAG}" ); \
 	done
 
 .PHONY: push-tag
 push-tag:
 	@[ "${TAG}" ] || ( echo ">> env var TAG is not set"; exit 1 )
 	@echo "Pushing tag ${TAG}"
-	@git push git@github.com:open-telemetry/opentelemetry-collector-contrib.git ${TAG}
+	@git push git@github.com:aspenmesh/aspenmesh-collector.git ${TAG}
 	@set -e; for dir in $(NONROOT_MODS); do \
 	  (echo Pushing tag "$${dir:2}/$${TAG}" && \
-	 	git push git@github.com:open-telemetry/opentelemetry-collector-contrib.git "$${dir:2}/$${TAG}"); \
+	 	git push git@github.com:aspenmesh/aspenmesh-collector.git "$${dir:2}/$${TAG}"); \
 	done
 
 .PHONY: delete-tag
