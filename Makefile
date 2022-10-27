@@ -253,8 +253,8 @@ ifndef COMPONENT
 	$(error COMPONENT variable was not defined)
 endif
 
-.PHONY: docker-otelcontribcol
-docker-otelcontribcol:
+.PHONY: docker-aspenmeshcollector
+docker-aspenmeshcollector:
 	COMPONENT=otelcontribcol $(MAKE) docker-component
 
 .PHONY: generate
