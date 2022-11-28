@@ -1,4 +1,6 @@
-## Install the Aspenmesh collector
+## Installing the Aspenmesh collector
+
+### Paste the following commands into your terminal. Be sure to replace your api key!
 
     kubectl create ns aspenmesh
 
